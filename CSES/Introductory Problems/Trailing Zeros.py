@@ -1,15 +1,15 @@
-x = int(input())
-x = x - (x%5)
-x //= 5
-y = 5
-i = 2
-dict = {}
-while y < x:
-    dict[y] = i
-    y *= 5
-    i += 1
-res = 0 
-for i in range(1,x+1):
-    
+def ceros_amount(x):
+    new_ceros = 0
+    while x % 5 == 0:
+        x = int(x/5)
+        new_ceros += 1
+    return new_ceros
 
-print(res)
+n = int(input())
+f = 5
+ceros = 0
+while f <= n:
+    ceros += ceros_amount(f)
+    f += 5
+
+print(ceros)
